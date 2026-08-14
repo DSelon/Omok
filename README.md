@@ -1,2 +1,2 @@
-# Omok-Server
-An Omok game server made using AI
+# Omok
+An Omok game server & client made using AI
