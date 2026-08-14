@@ -1,0 +1,58 @@
+C:\Files\Etc\Omok Server\bin\Debug\net9.0\appsettings.Development.json
+C:\Files\Etc\Omok Server\bin\Debug\net9.0\appsettings.json
+C:\Files\Etc\Omok Server\bin\Debug\net9.0\Omok Server.staticwebassets.runtime.json
+C:\Files\Etc\Omok Server\bin\Debug\net9.0\Omok Server.staticwebassets.endpoints.json
+C:\Files\Etc\Omok Server\bin\Debug\net9.0\Omok Server.exe
+C:\Files\Etc\Omok Server\bin\Debug\net9.0\Omok Server.deps.json
+C:\Files\Etc\Omok Server\bin\Debug\net9.0\Omok Server.runtimeconfig.json
+C:\Files\Etc\Omok Server\bin\Debug\net9.0\Omok Server.dll
+C:\Files\Etc\Omok Server\bin\Debug\net9.0\Omok Server.pdb
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\Omok Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\Omok Server.AssemblyInfoInputs.cache
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\Omok Server.AssemblyInfo.cs
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\Omok Server.csproj.CoreCompileInputs.cache
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\Omok Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\scopedcss\bundle\Omok Server.styles.css
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\compressed\rdai6g4e2e-cgky25ryf2.gz
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\staticwebassets.build.json
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\staticwebassets.development.json
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\Omok Server.dll
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\refint\Omok Server.dll
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\Omok Server.pdb
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\Omok Server.genruntimeconfig.cache
+C:\Files\Etc\Omok Server\obj\Debug\net9.0\ref\Omok Server.dll
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\bin\Debug\net9.0\appsettings.Development.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\bin\Debug\net9.0\appsettings.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\bin\Debug\net9.0\Omok Server.staticwebassets.endpoints.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\bin\Debug\net9.0\Omok Server.staticwebassets.runtime.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\bin\Debug\net9.0\Omok Server.exe
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\bin\Debug\net9.0\Omok Server.deps.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\bin\Debug\net9.0\Omok Server.runtimeconfig.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\bin\Debug\net9.0\Omok Server.dll
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\bin\Debug\net9.0\Omok Server.pdb
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\Omok Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\Omok Server.AssemblyInfoInputs.cache
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\Omok Server.AssemblyInfo.cs
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\Omok Server.csproj.CoreCompileInputs.cache
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\Omok Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\scopedcss\bundle\Omok Server.styles.css
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\compressed\rdai6g4e2e-cgky25ryf2.gz
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\staticwebassets.build.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\staticwebassets.development.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\Omok Server.dll
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\refint\Omok Server.dll
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\Omok Server.pdb
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\Omok Server.genruntimeconfig.cache
+C:\Files\Visual Studio Code\Projects\Omok Server (1)\obj\Debug\net9.0\ref\Omok Server.dll

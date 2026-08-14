@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>C# SignalR 오목 게임</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 30px; background-color: #f7f7f7; }
+        canvas { background-color: #deb887; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        #status { margin: 15px; font-size: 18px; font-weight: bold; color: #333; }
+        .box { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <h1>C# 웹 멀티플레이어 오목</h1>
+    <div class="box">
+        <input type="text" id="roomInput" placeholder="방 이름을 입력하세요" value="room1">
+        <button id="joinBtn">입장하기</button>
+    </div>
+    <div id="status">방에 입장해 주세요.</div>
+    <canvas id="omokBoard" width="600" height="600"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+    <script>
+        const canvas = document.getElementById("omokBoard");
+        const ctx = canvas.getContext("2d");
+        const boardSize = 15;
+        const gridSize = canvas.width / boardSize;
+        
+        let myRole = 0; // 1: 흑, 2: 백
+        let currentTurn = 1;
+        let isMyTurn = false;
+        let gameStarted = false;
+        let boardState = Array(boardSize).fill(0).map(() => Array(boardSize).fill(0));
+
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/omokHub")
+            .build();
+
+        connection.on("AssignRole", (role) => {
+            myRole = role;
+            document.getElementById("status").innerText = role === 1 ? "당신은 흑돌(선공)입니다. 상대방을 기다리는 중..." : "당신은 백돌(후공)입니다.";
+            drawBoard();
+        });
+
+        connection.on("GameStart", (msg) => {
+            gameStarted = true;
+            document.getElementById("status").innerText = msg + (currentTurn === myRole ? " 당신의 차례입니다." : " 상대방의 차례입니다.");
+            isMyTurn = (currentTurn === myRole);
+        });
+
+        connection.on("ReceiveMove", (x, y, player, nextTurn) => {
+            boardState[x][y] = player;
+            currentTurn = nextTurn;
+            isMyTurn = (currentTurn === myRole);
+            drawBoard();
+            document.getElementById("status").innerText = isMyTurn ? "당신의 차례입니다." : "상대방의 차례입니다.";
+        });
+
+        connection.on("GameOver", (winner) => {
+            alert(winner === myRole ? "승리했습니다!" : "패배했습니다!");
+            boardState = Array(boardSize).fill(0).map(() => Array(boardSize).fill(0));
+            drawBoard();
+        });
+
+        connection.on("Notice", (msg) => {
+            document.getElementById("status").innerText = msg;
+        });
+
+        document.getElementById("joinBtn").addEventListener("click", () => {
+            const roomName = document.getElementById("roomInput").value;
+            if (!roomName) return alert("방 이름을 입력하세요.");
+            
+            connection.start().then(() => {
+                connection.invoke("JoinRoom", roomName);
+                document.getElementById("roomInput").disabled = true;
+                document.getElementById("joinBtn").disabled = true;
+            }).catch(err => console.error(err.toString()));
+        });
+
+        function drawBoard() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = "#000";
+            ctx.lineWidth = 1;
+
+            for (let i = 0; i < boardSize; i++) {
+                ctx.beginPath();
+                ctx.moveTo(gridSize / 2 + i * gridSize, gridSize / 2);
+                ctx.lineTo(gridSize / 2 + i * gridSize, canvas.height - gridSize / 2);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.moveTo(gridSize / 2, gridSize / 2 + i * gridSize);
+                ctx.lineTo(canvas.width - gridSize / 2, gridSize / 2 + i * gridSize);
+                ctx.stroke();
+            }
+
+            for (let x = 0; x < boardSize; x++) {
+                for (let y = 0; y < boardSize; y++) {
+                    if (boardState[x][y] !== 0) {
+                        ctx.beginPath();
+                        ctx.arc(
+                            gridSize / 2 + x * gridSize,
+                            gridSize / 2 + y * gridSize,
+                            gridSize / 2 - 4,
+                            0,
+                            Math.PI * 2
+                        );
+                        ctx.fillStyle = boardState[x][y] === 1 ? "#000" : "#fff";
+                        ctx.fill();
+                        ctx.strokeStyle = "#000";
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        canvas.addEventListener("click", (e) => {
+            if (!gameStarted || !isMyTurn) return;
+
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            const x = Math.round((mouseX - gridSize / 2) / gridSize);
+            const y = Math.round((mouseY - gridSize / 2) / gridSize);
+
+            if (x >= 0 && x < boardSize && y >= 0 && y < boardSize) {
+                if (boardState[x][y] === 0) {
+                    const roomName = document.getElementById("roomInput").value;
+                    connection.invoke("MakeMove", roomName, x, y, myRole);
+                }
+            }
+        });
+
+        drawBoard();
+    </script>
+</body>
+</html>
